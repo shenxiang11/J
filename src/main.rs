@@ -46,6 +46,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 
             let mut v = Validation::new(algo);
             v.validate_aud = false;
+            v.leeway = 0;
 
             let key = match algo {
                 Algorithm::HS256 | Algorithm::HS384 | Algorithm::HS512 => &DecodingKey::from_secret(&buf),
